@@ -41,3 +41,8 @@ start=$(date +%s%3N)
 php 5.php
 end=$(date +%s%3N)
 echo "PHP elapsed time: $(($end-$start)) miliseconds"
+
+start=$(date +%s%3N)
+ruby 6.rb
+end=$(date +%s%3N)
+echo "Ruby elapsed time: $(($end-$start)) miliseconds"
