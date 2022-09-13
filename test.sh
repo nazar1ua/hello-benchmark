@@ -1,26 +1,16 @@
 #!/bin/bash
 
-start=$(date +%s%3N)
-zig run 1.zig
-end=$(date +%s%3N)
-echo "Zig elapsed time: $(($end-$start)) miliseconds"
-
-start=$(date +%s%3N)
-go run 2.go
-end=$(date +%s%3N)
-echo "Go elapsed time: $(($end-$start)) miliseconds"
-
 zig build-exe 1.zig
 start=$(date +%s%3N)
 ./1
 end=$(date +%s%3N)
-echo "Zig compiled elapsed time: $(($end-$start)) miliseconds"
+echo "Zig elapsed time: $(($end-$start)) miliseconds"
 
 go build 2.go
 start=$(date +%s%3N)
 ./2
 end=$(date +%s%3N)
-echo "Go compiled elapsed time: $(($end-$start)) miliseconds"
+echo "Go elapsed time: $(($end-$start)) miliseconds"
 
 start=$(date +%s%3N)
 echo "Hello, world!"
@@ -46,3 +36,15 @@ start=$(date +%s%3N)
 ruby 6.rb
 end=$(date +%s%3N)
 echo "Ruby elapsed time: $(($end-$start)) miliseconds"
+
+gcc -o 7 7.c
+start=$(date +%s%3N)
+./7
+end=$(date +%s%3N)
+echo "C elapsed time: $(($end-$start)) miliseconds"
+
+rustc 8.rs
+start=$(date +%s%3N)
+./8
+end=$(date +%s%3N)
+echo "Rust elapsed time: $(($end-$start)) miliseconds"
